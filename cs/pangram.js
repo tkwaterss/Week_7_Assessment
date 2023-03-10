@@ -6,7 +6,7 @@ const pangram = string => {
     let key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     string = string.toLowerCase(); //O(n)
     let count = 0;
-    for(let i = 0; i < key.length; i++) { //O(1) if alphabet is constant length
+    for(let i = 0; i < key.length; i++) { //O(1) if alphabet is constant length, else O(n)
         if(string.includes(key[i])) { //O(n)
             count++
         }
