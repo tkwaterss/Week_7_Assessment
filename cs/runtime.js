@@ -5,7 +5,7 @@ function doublerAppend(nums){
 
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i=0; i<nums.length; i++){ //O(n)
         let num = nums[i] * 2;
         new_nums.push(num);
     }
@@ -17,9 +17,9 @@ function doublerInsert(nums){
 
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i=0; i<nums.length; i++){ //O(n)
         let num = nums[i] * 2;
-        new_nums.unshift(num);
+        new_nums.unshift(num); //O(n)
     }
 
 }
@@ -27,7 +27,7 @@ function doublerInsert(nums){
 
 function getSizedArray(size){
     let array = [];
-    for (let i=0; i<size; i++){
+    for (let i=0; i<size; i++){ //O(n)
         array.push(i);
     }
     return array
@@ -39,7 +39,7 @@ const smallArray = getSizedArray(100);
 const mediumArray = getSizedArray(1000);
 const largeArray = getSizedArray(10000);
 const extraLargeArray = getSizedArray(100000);
-
+const XXLArray = getSizedArray(1000000)
 
 
 // How long does it take to double every number in a given 
@@ -47,16 +47,16 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
-doublerAppend(extraLargeArray);
+doublerAppend(XXLArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
 
 // Try it with second function
-perf.start();
-doublerInsert(extraLargeArray);
-let resultsInsert = perf.stop();
+// perf.start();
+// doublerInsert(extraLargeArray);
+// let resultsInsert = perf.stop();
 
 
 console.log('Results for the extraLargeArray');
-console.log("insert", resultsInsert.preciseWords);
+// console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
